@@ -1,16 +1,11 @@
-import React, { useState } from 'react'
+import { useState, useEffect } from 'react'
 import moment from 'moment'
 
-export default function Time(params) {
-	const [time, setTime] = useState(moment().format('LTS'))
+export default function Time({ dateTime }) {
+	const [time, setTime] = useState(null)
 
-	setInterval(() => {
-		setTime(() => moment().format('LTS'))
-	}, 1000)
-
-	return (
-		<time className='currentTime' dateTime={time}>
-			{time}
-		</time>
-	)
+	useEffect(() => {
+		setTime(moment(dateTime).format('hh:mm:ss A'))
+	})
+	return time
 }

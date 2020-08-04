@@ -1,18 +1,11 @@
-import React, { useState } from 'react'
+import { useState, useEffect } from 'react'
 import moment from 'moment'
 
-export default function Date() {
-	const [date, setDate] = useState(moment().format('dddd, MMMM DD, YYYY'))
-	const [dateISO, setDateISO] = useState(moment().format())
+export default function Date({ dateTime }) {
+	const [date, setDate] = useState(null)
 
-	setInterval(() => {
-		setDate(() => moment().format('dddd, MMMM DD, YYYY'))
-		setDateISO(() => moment().format())
-	}, 1000)
-
-	return (
-		<time className='currentTime' dateTime={date}>
-			{date}
-		</time>
-	)
+	useEffect(() => {
+		setDate(moment(dateTime).format('LL'))
+	})
+	return date
 }
