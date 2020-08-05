@@ -4,7 +4,7 @@ import Date from './Date'
 import Time from './Time'
 
 export default function DateTime() {
-	const [dateTime, setDateTime] = useState(null)
+	const [dateTime, setDateTime] = useState(moment().format())
 
 	setInterval(() => {
 		setDateTime(moment().format())
@@ -12,12 +12,8 @@ export default function DateTime() {
 
 	return (
 		<time className='dateTime' dateTime={dateTime}>
-			<span className='date'>
-				<Date dateTime={dateTime} />
-			</span>
-			<span className='time'>
-				<Time dateTime={dateTime} />
-			</span>
+			<Time dateTime={dateTime} />
+			<Date dateTime={dateTime} />
 		</time>
 	)
 }
