@@ -12,7 +12,8 @@ export default function Date({ dateTime }) {
 		setMonth(moment(dateTime).format('MMMM'))
 		setDay(moment(dateTime).format('D'))
 		setYear(moment(dateTime).format('YYYY'))
-	})
+	}, [dateTime])
+
 	return (
 		<span className='date'>
 			<span className='dayOfWeek'>{dayOfWeek}, </span>

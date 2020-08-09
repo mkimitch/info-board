@@ -12,7 +12,7 @@ export default function Time({ dateTime }) {
 		setMinutes(moment(dateTime).format('mm'))
 		setSeconds(moment(dateTime).format('ss'))
 		setAmPm(moment(dateTime).format('A'))
-	})
+	}, [dateTime])
 	return (
 		<span className='time'>
 			<span className='hours'>{hours}:</span>
