@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react'
+import moment from 'moment'
+import tz from 'moment-timezone'
 import { useWeatherData } from './WeatherContext'
 
 export default function SunriseSunset() {
@@ -7,8 +9,12 @@ export default function SunriseSunset() {
 	const [sunset, setSunset] = useState()
 
 	useEffect(() => {
-		setSunrise(weatherData.current?.sunrise)
-		setSunset(weatherData.current?.sunset)
+		setSunrise(
+			moment.tz(weatherData.current?.sunrise, 'America/Chicago').format('LTS')
+		)
+		setSunset(
+			moment.tz(weatherData.current?.sunset, 'America/Chicago').format('LTS')
+		)
 	}, [weatherData])
 
 	return (
