@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import { useWeatherData } from './WeatherContext'
+import { useGlobalStore } from '../Store'
 
 export default function Temperature(props) {
 	const [tempType, setTempType] = useState(props.data)
-	const { weatherData } = useWeatherData()
+	const { globalStore } = useGlobalStore()
 
 	useEffect(() => {
 		setTempType(props.data)
@@ -11,8 +11,11 @@ export default function Temperature(props) {
 
 	return (
 		<>
-			{tempType === 'current' && Math.round(weatherData.current?.temp)}
-			{tempType === 'feelsLike' && Math.round(weatherData.current?.feels_like)}℉
+			{tempType === 'current' &&
+				Math.round(globalStore.openWeatherJSON.current?.temp)}
+			{tempType === 'feelsLike' &&
+				Math.round(globalStore.openWeatherJSON.current?.feels_like)}
+			℉
 		</>
 	)
 }

@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react'
-import { useWeatherData } from './WeatherContext'
+import { useGlobalStore } from '../Store'
 
 export default function Condition() {
-	const { weatherData } = useWeatherData()
+	const { globalStore } = useGlobalStore()
 
 	return (
 		<>
 			<img
-				src={`http://openweathermap.org/img/wn/${weatherData.current?.weather[0].icon}@2x.png`}
-				alt={weatherData.current?.weather[0].description}
+				src={`http://openweathermap.org/img/wn/${globalStore.openWeatherJSON.current?.weather[0].icon}@2x.png`}
+				alt={globalStore.openWeatherJSON.current?.weather[0].description}
 			/>
 		</>
 	)

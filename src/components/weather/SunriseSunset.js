@@ -1,16 +1,20 @@
 import React, { useState, useEffect } from 'react'
 import moment from 'moment'
-import { useWeatherData } from './WeatherContext'
+import { useGlobalStore } from '../Store'
 
 export default function SunriseSunset() {
-	const { weatherData } = useWeatherData()
+	const { globalStore } = useGlobalStore()
 	const [sunrise, setSunrise] = useState()
 	const [sunset, setSunset] = useState()
 
 	useEffect(() => {
-		setSunrise(moment.unix(weatherData.current?.sunrise).format('LT'))
-		setSunset(moment.unix(weatherData.current?.sunset).format('LT'))
-	}, [weatherData])
+		setSunrise(
+			moment.unix(globalStore.openWeatherJSON.current?.sunrise).format('LT')
+		)
+		setSunset(
+			moment.unix(globalStore.openWeatherJSON.current?.sunset).format('LT')
+		)
+	}, [globalStore.openWeatherJSON])
 
 	return (
 		<>
