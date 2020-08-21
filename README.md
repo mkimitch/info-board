@@ -1,14 +1,13 @@
-<div align="center">👨🏼‍💻👨🏼‍💻👨🏼‍💻 AVAILABLE FOR HIRE 👨🏼‍💻👨🏼‍💻👨🏼‍💻</div> |
------------- |
-I am looking for work! If you like what you see here or if you just like the cut of my jib, and you'd like to maybe hire me, please feel free to contact me :octocat: |
+<div align="center">👨🏼‍💻👨🏼‍💻👨🏼‍💻 AVAILABLE FOR HIRE 👨🏼‍💻👨🏼‍💻👨🏼‍💻</div>
+<p align="center">I am looking for work! If you like what you see here or if you just like the cut of my jib, and you'd like to maybe hire me, please feel free to contact me :octocat:</p>
+
+---
 
 # info-board
 
 A custom information board.
 
 This is a project I have long been wanting to get started; so here I am. Eventually, I hope to use this project to replace the DAKboard (https://dakboard.com/) application I currently have running on a Raspberry Pi Zero W in the Mud Room in my home. This project is currently being built in React, but I'm also planning to build it in Svelte once I'm done (for fun and education). I also plan to write a backend component (probably using Python) to handle the calls to the various APIs, do some caching, etc..
-
----
 
 ## Planned Features (so far)
 
@@ -75,11 +74,7 @@ This is a project I have long been wanting to get started; so here I am. Eventua
    REACT_APP_WEATHER_DEFAULT_API_KEY=[YOUR_KEY_HERE]
 ```
 
-3.
-
-```bash
-npm install && npm start
-```
+3. `npm install && npm start`
 
 ---
 
