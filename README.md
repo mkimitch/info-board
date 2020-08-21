@@ -1,3 +1,7 @@
+<div align="center">👨🏼‍💻👨🏼‍💻👨🏼‍💻 AVAILABLE FOR HIRE 👨🏼‍💻👨🏼‍💻👨🏼‍💻</div> |
+------------ |
+I am looking for work! If you like what you see here or if you just like the cut of my jib, and you'd like to maybe hire me, please feel free to contact me :octocat: |
+
 # info-board
 
 A custom information board.
@@ -10,40 +14,72 @@ This is a project I have long been wanting to get started; so here I am. Eventua
 
 ### Date & Time
 
-- Date
-- Time
+- [x] Date
+- [x] Time
 
 ### Weather
 
-- Wind
-- Sunset & Sunrise
-- Current Temp
-- Feels Like Temp
-- Current Conditions
-- Three-hour Forecast
-- 5-day Forecast
-  - Day
-  - Condition
-  - Percipitation
-  - High & Low Temps
-- Weather Alerts
+- [ ] Wind
+- [x] Sunset & Sunrise
+- [x] Current Temp
+- [x] Feels Like Temp
+- [x] Current Conditions
+- [ ] Three-hour Forecast
+- [ ] 5-day Forecast
+  - [ ] Day
+  - [ ] Condition
+  - [ ] Percipitation
+  - [ ] High & Low Temps
+- [ ] Weather Alerts
 
 ### Calendar Integration
 
-- Google Calendar
-- Microsoft Calendar
-- Configurable UI
+- [ ] Google Calendar
+- [ ] Microsoft Calendar
+- [ ] Configurable UI
 
 ### Google Nest Integration
 
-- Thermostat
-  - HVAC Status
-  - Temperature
-- Camera Feeds
+- [ ] Thermostat
+  - [ ] HVAC Status
+  - [ ] Temperature
+- [ ] Camera Feeds
 
 ### Web Speech API Integration
 
-- Use your voice to navigate screens / change the display
+- [ ] Use your voice to navigate screens / change the display
+
+### Admin Section
+
+- [ ] Login/Auth Functionality
+- [ ] Get location by Geolocation API or manually entering it
+- [ ] Other customizations
+
+### Making It Look Pretty
+
+- [ ] An actual layout
+- [ ] Modular layout options
+- [ ] Animated weather icons (?)
+- [ ] Animated weather effects (?)
+
+---
+
+## Basic Setup (so far)
+
+1. Get a OpenWeather One Call API Key (free)
+   1. https://openweathermap.org/price
+   2. https://openweathermap.org/api/one-call-api
+2. Create a `.env.development.local` file in the root directory of the project and add the following:
+
+```
+   REACT_APP_WEATHER_DEFAULT_API_KEY=[YOUR_KEY_HERE]
+```
+
+3.
+
+```bash
+npm install && npm start
+```
 
 ---
 
