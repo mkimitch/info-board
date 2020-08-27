@@ -7,17 +7,20 @@ export default function Condition() {
 	const [weatherIconAlt, setWeatherIconAlt] = useState()
 
 	useEffect(() => {
-		setWeatherIcon(globalStore.openWeatherJSON.current?.weather[0].icon)
+		setWeatherIcon(globalStore.openWeatherJSON.current?.weather[0].id)
 		setWeatherIconAlt(
 			globalStore.openWeatherJSON.current?.weather[0].description
 		)
 	}, [globalStore.openWeatherJSON])
+
 	return (
 		<>
-			<img
-				src={`http://openweathermap.org/img/wn/${weatherIcon}@2x.png`}
-				alt={weatherIconAlt}
-			/>
+			{weatherIcon && (
+				<i
+					className={`wi wi-owm-${weatherIcon}`}
+					aria-label={weatherIconAlt}
+				></i>
+			)}
 		</>
 	)
 }

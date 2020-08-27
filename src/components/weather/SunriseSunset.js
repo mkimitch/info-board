@@ -18,7 +18,12 @@ export default function SunriseSunset() {
 
 	return (
 		<>
-			Sunrise: {sunrise} Sunset: {sunset}
+			{sunrise && sunset && (
+				<div>
+					<i className='wi wi-sunrise' aria-label='sunrise'></i> {sunrise}{' '}
+					<i className='wi wi-sunset' aria-label='sunset'></i> {sunset}
+				</div>
+			)}
 		</>
 	)
 }
