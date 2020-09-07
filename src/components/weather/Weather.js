@@ -2,6 +2,12 @@ import React, { useEffect } from 'react'
 import Condition from './Condition'
 import Temperature from './Temperature'
 import SunriseSunset from './SunriseSunset'
+import Humidity from './Humidity'
+import Pressure from './Pressure'
+import DewPoint from './DewPoint'
+import UVIndex from './UVIndex'
+import Wind from './Wind'
+import DailyForecast from './DailyForecast'
 import { useGlobalStore } from '../Store'
 
 const weatherApiString = function () {
@@ -9,19 +15,20 @@ const weatherApiString = function () {
 }
 
 const _iterator = 5 * 60 * 1000
+// const _iterator = 30 * 1000
 
 export default function Weather({ zip }) {
 	const { globalStore, setGlobalStore } = useGlobalStore()
 
 	useEffect(() => {
-		getWeatherData()
-
 		async function getWeatherData() {
 			const results = await fetch(weatherApiString())
 			const data = await results.json()
 			console.log(data)
 			setGlobalStore({ ...globalStore, openWeatherJSON: data })
 		}
+
+		getWeatherData()
 
 		const interval = setInterval(() => {
 			getWeatherData()
@@ -33,7 +40,7 @@ export default function Weather({ zip }) {
 	return (
 		<>
 			<div className='current'>
-				<Condition />
+				<Condition data={globalStore.openWeatherJSON.current} />
 			</div>
 			<div className='current'>
 				<Temperature data='current' />
@@ -43,6 +50,24 @@ export default function Weather({ zip }) {
 			</div>
 			<div>
 				<SunriseSunset />
+			</div>
+			<div>
+				<Humidity />
+			</div>
+			<div>
+				<Pressure />
+			</div>
+			<div>
+				<DewPoint />
+			</div>
+			<div>
+				<UVIndex />
+			</div>
+			<div>
+				<Wind />
+			</div>
+			<div>
+				<DailyForecast />
 			</div>
 		</>
 	)
