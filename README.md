@@ -18,18 +18,22 @@ This is a project I have long been wanting to get started; so here I am. Eventua
 
 ### Weather
 
-- [ ] Wind
-- [x] Sunset & Sunrise
-- [x] Current Temp
-- [x] Feels Like Temp
 - [x] Current Conditions
-- [ ] Three-hour Forecast
-- [ ] 5-day Forecast
-  - [ ] Day
-  - [ ] Condition
+- [x] Current Temp
+- [x] Daily Forecast
+  - [x] Condition
+  - [x] Day
+  - [x] High & Low Temps
   - [ ] Percipitation
-  - [ ] High & Low Temps
+- [x] Dew-point
+- [x] Feels Like Temp
+- [x] Humidity
+- [x] Pressure
+- [x] Sunset & Sunrise
+- [ ] Three-hour Forecast
+- [x] UV Index
 - [ ] Weather Alerts
+- [x] Wind
 
 ### Calendar Integration
 
