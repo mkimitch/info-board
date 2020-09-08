@@ -1,25 +1,19 @@
 import React, { useState, useEffect } from 'react'
-import { useGlobalStore } from '../Store'
 
-export default function Condition() {
-	const { globalStore } = useGlobalStore()
-	const [weatherIcon, setWeatherIcon] = useState()
-	const [weatherIconAlt, setWeatherIconAlt] = useState()
+export default function Condition(props) {
+	const [conditionData, setConditionData] = useState()
 
 	useEffect(() => {
-		setWeatherIcon(globalStore.openWeatherJSON.current?.weather[0].id)
-		setWeatherIconAlt(
-			globalStore.openWeatherJSON.current?.weather[0].description
-		)
-	}, [globalStore.openWeatherJSON])
+		setConditionData(props.data)
+	}, [props])
 
 	return (
 		<>
-			{weatherIcon && (
+			{conditionData && (
 				<i
-					className={`wi wi-owm-${weatherIcon}`}
-					aria-label={weatherIconAlt}
-				></i>
+					className={`wi wi-owm-${conditionData.id} weather-icon`}
+					aria-label={conditionData.description}
+				/>
 			)}
 		</>
 	)

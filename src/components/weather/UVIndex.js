@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import { useGlobalStore } from '../Store'
 
-export default function UVIndex() {
-	const { globalStore } = useGlobalStore()
+export default function UVIndex(props) {
 	const [uvi, setUvi] = useState()
 
 	useEffect(() => {
-		setUvi(globalStore.openWeatherJSON.current?.uvi)
-	}, [globalStore.openWeatherJSON])
+		setUvi(props.data)
+	}, [props])
 
 	return (
 		<>

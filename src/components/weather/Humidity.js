@@ -1,19 +1,17 @@
 import React, { useState, useEffect } from 'react'
-import { useGlobalStore } from '../Store'
 
-export default function Humidity() {
-	const { globalStore } = useGlobalStore()
+export default function Humidity(props) {
 	const [humidity, setHumidity] = useState()
 
 	useEffect(() => {
-		setHumidity(globalStore.openWeatherJSON.current?.humidity)
-	}, [globalStore.openWeatherJSON])
+		setHumidity(props.data)
+	}, [props])
 
 	return (
 		<>
 			{humidity && (
 				<>
-					<i className='wi wi-humidity' aria-label='humidity'></i>
+					<i className='wi wi-humidity' aria-label='humidity' />
 					<span>{humidity}%</span>
 				</>
 			)}

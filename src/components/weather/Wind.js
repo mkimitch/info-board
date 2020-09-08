@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import { useGlobalStore } from '../Store'
 
-export default function Wind() {
-	const { globalStore } = useGlobalStore()
-	const [windSpeed, setWindSpeed] = useState(null)
-	const [windDegree, setWindDegree] = useState(null)
-	const [beaufortWind, setBeaufortWind] = useState(null)
+export default function Wind(props) {
+	const [windSpeed, setWindSpeed] = useState()
+	const [windDegree, setWindDegree] = useState()
+	const [beaufortWind, setBeaufortWind] = useState()
 
 	const beaufortWindScale = windSpeed => {
 		if (windSpeed < 1) return { number: 0, description: 'Calm' }
@@ -24,10 +22,10 @@ export default function Wind() {
 	}
 
 	useEffect(() => {
-		setWindSpeed(globalStore.openWeatherJSON.current?.wind_speed)
-		setWindDegree(globalStore.openWeatherJSON.current?.wind_deg)
+		setWindSpeed(props.speed)
+		setWindDegree(props.degree)
 		setBeaufortWind(beaufortWindScale(windSpeed))
-	}, [globalStore.openWeatherJSON])
+	}, [props, windSpeed])
 
 	return (
 		<>

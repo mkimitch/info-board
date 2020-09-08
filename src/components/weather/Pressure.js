@@ -1,23 +1,19 @@
 import React, { useState, useEffect } from 'react'
-import { useGlobalStore } from '../Store'
 
-export default function Pressure() {
-	const { globalStore } = useGlobalStore()
+export default function Pressure(props) {
 	const [pressure, setPressure] = useState()
 
 	useEffect(() => {
-		setPressure(globalStore.openWeatherJSON.current?.pressure)
-	}, [globalStore.openWeatherJSON])
+		setPressure(props.data)
+	}, [props])
 
 	return (
 		<>
 			{pressure && (
 				<>
 					<i className='wi wi-pressure' aria-label='pressure'></i>
-					<span>
-						{pressure}{' '}
-						<abbr title='Atmospheric pressure on the sea level'>hPa</abbr>
-					</span>
+					{pressure}{' '}
+					<abbr title='Atmospheric pressure on the sea level'>hPa</abbr>
 				</>
 			)}
 		</>

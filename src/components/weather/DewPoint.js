@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import { useGlobalStore } from '../Store'
 
-export default function DewPoint() {
-	const { globalStore } = useGlobalStore()
+export default function DewPoint(props) {
 	const [dewPoint, setDewPoint] = useState()
 
 	useEffect(() => {
-		setDewPoint(globalStore.openWeatherJSON.current?.dew_point)
-	}, [globalStore.openWeatherJSON])
+		setDewPoint(props.data)
+	}, [props])
 
 	return <>{dewPoint && <>Dew-point: {dewPoint}</>}</>
 }
