@@ -1,8 +1,8 @@
-<div align="center">👨🏼‍💻👨🏼‍💻👨🏼‍💻 AVAILABLE FOR HIRE 👨🏼‍💻👨🏼‍💻👨🏼‍💻</div>
+<!-- <div align="center">👨🏼‍💻👨🏼‍💻👨🏼‍💻 AVAILABLE FOR HIRE 👨🏼‍💻👨🏼‍💻👨🏼‍💻</div>
 <p align="center">I am looking for work! If you like what you see here or if you just like the cut of my jib, and you'd like to maybe hire me, please feel free to contact me :octocat:</p>
 
 ---
-
+ -->
 # info-board
 
 A custom information board.
